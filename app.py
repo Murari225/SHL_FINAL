@@ -19,11 +19,11 @@ NN = "data/nn_model.joblib"
 
 # --- Load Models at Startup ---
 try:
-    # Ensure data directory exists before trying to load
-    if not os.path.exists("data"):
-        print("ERROR: 'data' directory not found. Please create it and add metadata.csv, embeddings.npy, and nn_model.joblib.", file=sys.stderr)
+    # Check that the data files exist (they should be downloaded by the build command)
+    if not os.path.exists(META):
+        print(f"ERROR: Model file not found at {META}. Deployment build step may have failed.", file=sys.stderr)
         sys.exit(1)
-        
+    
     df = pd.read_csv(META)
     embs = np.load(EMB)
     nbrs = joblib.load(NN)
@@ -162,7 +162,6 @@ def recommend():
 # --- Static File Route (for CSS/JS) ---
 # Flask's `render_template` and `url_for` handle this automatically
 # when files are in `static` and `templates` folders.
-# This explicit route is good practice if you have other static assets.
 @app.route('/static/<path:path>')
 def send_static(path):
     return send_from_directory('static', path)
