@@ -1,0 +1,13 @@
+numpy==1.26.4
+pandas
+scikit-learn
+joblib
+sentence-transformers
+torch
+Flask
+gunicorn
+openpyxl
+tqdm
+requests
+beautifulsoup4
+playwright
