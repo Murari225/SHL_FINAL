@@ -1,3 +1,5 @@
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.3.1+cpu
 Flask==3.0.3
 gunicorn==22.0.0
 numpy==1.26.4
@@ -5,10 +7,3 @@ pandas==2.2.2
 scikit-learn==1.7.2
 joblib==1.4.2
 sentence-transformers==3.0.1
-torch==2.3.1
-openpyxl==3.1.4
-tqdm==4.66.4
-requests==2.32.3
-beautifulsoup4==4.12.3
-playwright==1.45.0
-gdown==5.2.0
