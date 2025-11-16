@@ -17,7 +17,7 @@ df = pd.read_csv(IN)
 texts = df["canonical_text"].fillna("").tolist()
 
 print("Loading model...")
-model = SentenceTransformer("all-mpnet-base-v2")
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
 print("Encoding...")
 embs = model.encode(texts, show_progress_bar=True, batch_size=16)

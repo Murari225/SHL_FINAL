@@ -11,7 +11,7 @@ NN = "data/nn_model.joblib"
 df = pd.read_csv(META)
 embs = np.load(EMB)
 nbrs = joblib.load(NN)
-model = SentenceTransformer("all-mpnet-base-v2")
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def recommend(query, top_k=10):
     qv = model.encode([query], convert_to_numpy=True).astype("float32")

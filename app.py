@@ -27,7 +27,7 @@ try:
     df = pd.read_csv(META)
     embs = np.load(EMB)
     nbrs = joblib.load(NN)
-    model = SentenceTransformer("all-mpnet-base-v2")
+    model = SentenceTransformer("all-MiniLM-L6-v2")
     print("API: Loaded metadata, embeddings, NN and model.")
 except Exception:
     print("API startup error:", file=sys.stderr)
